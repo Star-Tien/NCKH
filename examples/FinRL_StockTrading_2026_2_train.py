@@ -114,7 +114,7 @@ if if_using_td3:
     agent = DRLAgent(env=env_train)
     TD3_PARAMS = {
         "batch_size": 100,
-        "buffer_size": 1000000,
+        "buffer_size": 50000,
         "learning_rate": 0.001,
     }
     model_td3 = agent.get_model("td3", model_kwargs=TD3_PARAMS)
@@ -132,7 +132,7 @@ if if_using_sac:
     agent = DRLAgent(env=env_train)
     SAC_PARAMS = {
         "batch_size": 128,
-        "buffer_size": 100000,
+        "buffer_size": 50000,
         "learning_rate": 0.0001,
         "learning_starts": 100,
         "ent_coef": "auto_0.1",
